@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: sticky top bar, one long page of ruled sections. Blue and white, with the cover's orange as the single warm accent. */
+:root{
+  --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gutter:clamp(1rem,4vw,2.5rem);
+  --bg:#F7FAFF; --surface:#FFFFFF; --fg:#0B1F4B; --muted:#475A82; --rule:#D3DDF0;
+  --accent:#1D4ED8; --accent-ink:#FFFFFF; --accent-soft:#DCE7FF;
+  --panel:#0C1E4A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+  --edge:#0B1F4B; --band:#F79321; --band-ink:#0B1F4B; --c1:#1D4ED8; --c2:#B45309; --c3:#0B1F4B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1430; --surface:#0F1B3F; --fg:#E8EEFB; --muted:#9DB0D8; --rule:#24345F;
+    --accent:#7AA2FF; --accent-ink:#0A1430; --accent-soft:#1B2E63;
+    --panel:#13255A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+    --edge:#C7D5F5; --band:#F79321; --band-ink:#0B1F4B; --c1:#7AA2FF; --c2:#F79321; --c3:#C7D5F5;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1430; --surface:#0F1B3F; --fg:#E8EEFB; --muted:#9DB0D8; --rule:#24345F;
+  --accent:#7AA2FF; --accent-ink:#0A1430; --accent-soft:#1B2E63;
+  --panel:#13255A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+  --edge:#C7D5F5; --band:#F79321; --band-ink:#0B1F4B; --c1:#7AA2FF; --c2:#F79321; --c3:#C7D5F5;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.55;
+  margin:0;padding-inline:var(--gutter);padding-block:0;-webkit-text-size-adjust:100%}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+strong{font-weight:600}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.01em;line-height:1.1}
+p{margin:0}
+.wrap{max-width:66rem;margin-inline:auto}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--rule);margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter)}
+.top .wrap{display:flex;flex-wrap:wrap;gap:.35rem 1.75rem;justify-content:space-between;align-items:baseline;padding-block:.8rem}
+.brand{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--fg);text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.nav a{color:var(--muted);text-decoration:none;padding-block:.15rem}
+.nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:2.5rem 3rem;align-items:center;padding-block:clamp(2.5rem,7vw,5rem)}
+.kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(2.7rem,8vw,5.2rem);letter-spacing:-.03em;line-height:.98;margin-block:.9rem 1.4rem}
+.lead{font-size:clamp(1.15rem,2.4vw,1.35rem);line-height:1.5;max-width:34rem}
+.lead + .lead{margin-top:.9rem;color:var(--muted)}
+h1 .mark{background:linear-gradient(transparent 70%,var(--band) 70% 92%,transparent 92%);padding-inline:.04em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.who{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1.5rem;align-items:start}
+.portrait{width:9rem;height:auto;aspect-ratio:342/396;object-fit:cover;border:2px solid var(--edge);border-radius:8px}
+
+/* the dark book panel */
+.panel{background:var(--panel);color:var(--panel-fg);padding:1.75rem;display:grid;gap:1.1rem;min-width:0}
+.panel .kicker{color:var(--panel-accent)}
+.panel h2{font-size:clamp(1.9rem,4vw,2.5rem)}
+.panel .sub{color:var(--panel-muted);font-size:1rem}
+.panel .cv{width:min(100%,10rem);margin:0 8px 8px 0}
+.panel .meta{font-family:var(--mono);font-size:.8rem;color:var(--panel-muted)}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.98rem;text-decoration:none;
+  background:var(--accent);color:var(--accent-ink);padding:.65rem 1.1rem;justify-self:start}
+.btn:hover{text-decoration:underline}
+.panel .btn{background:var(--panel-accent);color:var(--band-ink)}
+
+/* sections */
+.sec{border-top:1px solid var(--rule);padding-block:clamp(2.2rem,5vw,3.4rem)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.5rem;justify-content:space-between;margin-bottom:1.5rem}
+.sec h2{font-size:clamp(1.7rem,3.6vw,2.3rem)}
+.sec-head p{color:var(--muted);font-size:.98rem;max-width:34rem}
+.rows.wide > li{grid-template-columns:8.5rem minmax(0,1fr)}
+.bio-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);gap:2.5rem 4rem;align-items:start;
+  padding-block:clamp(2.5rem,6vw,4rem)}
+.bio-hero h1{font-size:clamp(2.7rem,8vw,4.6rem);letter-spacing:-.03em;line-height:1;margin-block:.8rem 1.6rem}
+.bio-text{max-width:40rem;display:grid;gap:1.05rem;font-size:1.125rem}
+.bio-text ol.ab{margin:0;padding-left:1.7rem;display:grid;gap:.5rem}
+.bio-text ol.ab li::marker{content:counter(list-item,lower-alpha) ") ";font-family:var(--mono);font-size:.9rem;color:var(--accent)}
+.bio-side{position:sticky;top:5rem;display:grid;gap:.8rem;min-width:0}
+.bio-side img{width:100%;height:auto;aspect-ratio:342/396;object-fit:cover;border:2px solid var(--edge);border-radius:8px}
+.bio-side p{font-size:.95rem;color:var(--muted);line-height:1.4}
+.group{margin-top:2rem}
+.group:first-of-type{margin-top:0}
+.group h3{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding-bottom:.55rem;border-bottom:1px solid var(--fg);letter-spacing:.08em}
+.rows{list-style:none;margin:0;padding:0}
+.rows > li{display:grid;grid-template-columns:5.2rem minmax(0,1fr);gap:1rem;padding-block:.8rem;border-bottom:1px solid var(--rule)}
+.when{font-family:var(--mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:.2rem;line-height:1.4}
+.what{min-width:0;overflow-wrap:break-word}
+.what .t{font-family:var(--display);font-weight:600}
+.what .sub{display:block;color:var(--muted);font-size:.98rem}
+.what ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.98rem}
+.what li{margin-block:.1rem}
+.note{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);
+  border:1px solid currentColor;padding:.05rem .4rem;margin-left:.4rem;white-space:nowrap;display:inline-block;line-height:1.5}
+
+/* filter chips */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.chip{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;background:transparent;color:var(--fg);
+  border:1px solid var(--rule);padding:.4rem .8rem;cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* contact + footer */
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
+.addr{font-family:var(--mono);font-size:.95rem;user-select:all;overflow-wrap:anywhere}
+.copy{font-family:var(--mono);font-size:.75rem;background:transparent;color:var(--accent);border:1px solid var(--accent);padding:.3rem .7rem;cursor:pointer}
+.foot{border-top:1px solid var(--rule);padding-block:1.6rem 2.4rem;color:var(--muted);font-size:.92rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .bio-hero{grid-template-columns:minmax(0,1fr)}
+  .bio-side{order:-1;position:static;max-width:13rem}
+}
+@media (max-width:520px){
+  .rows.wide > li{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  .who{grid-template-columns:minmax(0,1fr)}
+  .portrait{width:7.5rem}
+}
+@media (max-width:480px){
+  .rows > li{grid-template-columns:minmax(0,1fr);gap:.15rem}
+  .when{padding-top:0}
+}
+
+/* Cover with an animated door: the leaf is cut from the cover art and swings open and shut over a lit room. */
+.cv{position:relative;container-type:inline-size;line-height:0}
+.cv{border-radius:2px 5px 5px 2px;
+  box-shadow:1px 1px 0 #f6f1e6,2px 2px 0 #d8d0bc,3px 3px 0 #f6f1e6,4px 4px 0 #cdc5b0,5px 5px 0 #f3eee2,6px 6px 0 #b9b19b,
+  14px 20px 26px -6px rgba(0,0,0,.45),4px 6px 8px rgba(0,0,0,.25)}
+.cv::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:5;
+  background:
+   linear-gradient(90deg,rgba(0,0,0,.32) 0,rgba(0,0,0,.05) .8%,rgba(255,255,255,.42) 1.6%,rgba(0,0,0,.2) 3%,rgba(0,0,0,0) 7%),
+   linear-gradient(115deg,rgba(255,255,255,.22) 0,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(0,0,0,.12) 100%)}
+@media (prefers-reduced-motion:reduce){.bk-feature .cv,.bk-feature .cv:hover{transform:none;transition:none}}
+
+.cv > img{display:block;width:100%;height:auto}
+.cv .dr{position:absolute;left:73.6%;top:9.38%;width:20.5%;height:26.4%;background:#E8B859;
+  perspective:120cqw;pointer-events:none}
+.cv .dr::before{content:"";position:absolute;inset:0;box-shadow:0 0 5cqw 2cqw rgba(255,232,140,.9);opacity:0;
+  animation:door-glow var(--door-dur,9s) infinite}
+.cv .room{position:absolute;left:6.25%;right:6.25%;top:3.42%;bottom:3.42%;
+  background:radial-gradient(ellipse 85% 75% at 35% 45%,#FFF8D2 0%,#FBE38E 58%,#EDB24E 100%)}
+.cv .leaf{position:absolute;left:6.25%;right:6.25%;top:3.42%;bottom:3.42%;transform-origin:100% 50%;
+  background:url(assets/cover.jpg) 91.3% 13.63%/556.9% auto no-repeat;backface-visibility:hidden;
+  animation:door-swing var(--door-dur,9s) infinite}
+.cv .leaf::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,22,0,.8),rgba(45,22,0,.15));
+  opacity:0;animation:door-shade var(--door-dur,9s) infinite}
+.cv.paused .dr::before,.cv.paused .leaf,.cv.paused .leaf::after{animation-play-state:paused}
+.cv .qclip{position:absolute;left:0;top:28.14%;width:73.6%;height:9.08%;overflow:hidden;pointer-events:none}
+.cv .queue{display:block;width:100%;height:100%;animation:q-walk calc(var(--door-dur,9s)*4) infinite,q-fade calc(var(--door-dur,9s)*4) infinite}
+.cv.paused .queue{animation-play-state:paused}
+@keyframes q-walk{
+0%,3.5%{transform:translateX(0)}15%,28.5%{transform:translateX(6%)}40%,53.5%{transform:translateX(12%)}
+65%,78.5%{transform:translateX(18%)}90%,97.5%{transform:translateX(24%)}98%,100%{transform:translateX(0)}}
+@keyframes q-fade{0%,96%{opacity:1}97.5%,99.5%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.cv .queue{animation:none}}
+@keyframes door-swing{
+  0%{transform:rotateY(0)}
+  10%{transform:rotateY(0);animation-timing-function:cubic-bezier(.4,.05,.25,1)}
+  30%{transform:rotateY(-80deg)}
+  60%{transform:rotateY(-80deg);animation-timing-function:cubic-bezier(.55,0,.35,1)}
+  78%{transform:rotateY(0)}
+  100%{transform:rotateY(0)}
+}
+@keyframes door-shade{0%,10%{opacity:0}30%,60%{opacity:.6}78%,100%{opacity:0}}
+@keyframes door-glow{0%,10%{opacity:0}30%,60%{opacity:1}78%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .cv .dr::before,.cv .leaf,.cv .leaf::after{animation:none}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Sofia Serra-Silva</a><nav class="nav" aria-label="Sections"><a href="index.html">Home</a><a href="bio.html" aria-current="page" style="color:var(--fg)">Bio</a><a href="book.html">My Book</a><a href="index.html#publications">Publications</a><a href="index.html#teaching">Teaching</a></nav></div></header>
+<main class="wrap">
+  <section class="bio-hero" aria-labelledby="bio-h">
+    <div>
+      <p class="kicker">About</p>
+      <h1 id="bio-h"><span class="mark">Bio</span></h1>
+      <div class="bio-text">
+        <p>Hello,</p>
+        <p>I am Sofia Serra-Silva, a Research Fellow at the Institute of Social Sciences, University of Lisbon, with a PhD in Comparative Politics (2020).</p>
+        <p>My research explores how political institutions and citizens engage in the contemporary globalized digital landscape. Two key questions drive my work:</p>
+        <ol class="ab">
+          <li>How are political institutions addressing democratic fractures and strengthening their connection with citizens in a hyper-mediatized 21st century?</li>
+          <li>How do citizens engage with political institutions and participate in democratic processes?</li>
+        </ol>
+        <p>My findings have been published in <em>Party Politics</em>, <em>Policy &amp; Internet</em>, <em>Parliamentary Affairs</em>, <em>Journal of Legislative Studies</em>, <em>European Politics &amp; Society</em>, <em>Mediterranean Politics</em>, among other outlets.</p>
+        <p>I am currently the Principal Investigator (PI) of the FCT-funded project <em>Bridging the Gap: A New Approach to Understanding Citizen Attitudes and Perceptions Towards the Portuguese Parliament</em> (proj. ref: 2023.12063.PEX).</p>
+        <p>I also coordinate the Interdisciplinary Observatory of ICS (OSeM), whose mission is to help the ICS community build bridges between their research and wider society, including journalists, policymakers, and the general public. I particularly value this work in science communication, which I find both meaningful and rewarding. It also gives me an opportunity to be creative, something I greatly appreciate alongside my academic work.</p>
+        <p>Beyond my role at ICS, I serve on the Board of IPP-Thomas Jefferson-Correia Serra, an academic think tank, where my policy-oriented work has received support from institutions like the Bertelsmann Stiftung Foundation.</p>
+        <p>I am deeply committed to normalizing transparency around toxic environments and cultures in academia, including bullying, in scholarly communities. I have openly shared my experiences and their impact on my mental health — see my ECPR <em>The Loop</em> article.</p>
+        <p>I am also passionate about demystifying the more intricate aspects of academic life and fostering a supportive community among early career researchers. To this end, I organize the annual “Research &amp; Publish Seminars” series, which you are welcome to subscribe to! If you need guidance on navigating academia, please don’t hesitate to <a href="index.html#contact">reach out</a> — I truly mean it!</p>
+      </div>
+    </div>
+    <aside class="bio-side">
+      <img src="assets/sofia.jpg" width="342" height="396" alt="Portrait of Sofia Serra-Silva">
+      <p>Sofia Serra-Silva<br>Institute of Social Sciences, University of Lisbon</p>
+    </aside>
+  </section>
+
+  <section class="sec" id="positions" aria-labelledby="pos-h">
+    <div class="sec-head"><h2 id="pos-h">Academic positions</h2><p>Most recent first.</p></div>
+    
+<ol class="rows wide">
+  <li><span class="when">2025–2026</span><div class="what"><span class="t">Visiting Researcher</span><span class="sub">Université libre de Bruxelles</span></div></li>
+  <li><span class="when">Fall 2024</span><div class="what"><span class="t">Excellence Postdoctoral Researcher</span><span class="sub">Université libre de Bruxelles</span></div></li>
+  <li><span class="when">Spring 2023</span><div class="what"><span class="t">Visiting Professor</span><span class="sub">Georgetown University, Washington DC</span></div></li>
+  <li><span class="when">Since May 2021</span><div class="what"><span class="t">Postdoctoral Research Fellow</span><span class="sub">University of Lisbon, Portugal</span></div></li>
+  <li><span class="when">Fall 2018</span><div class="what"><span class="t">Visiting Researcher</span><span class="sub">University of Vienna, Austria</span></div></li>
+  <li><span class="when">Spring 2016</span><div class="what"><span class="t">Visiting Researcher</span><span class="sub">University of Leeds, United Kingdom</span></div></li>
+</ol>
+
+  </section>
+
+  <section class="sec" id="education" aria-labelledby="edu-h">
+    <div class="sec-head"><h2 id="edu-h">Education</h2></div>
+    
+<ol class="rows">
+  <li><span class="when">2020</span><div class="what"><span class="t">PhD, Political Science (Comparative Politics)</span>
+    <span class="sub">Institute of Social Sciences, University of Lisbon</span>
+    <span class="sub">Thesis: <em>Parliamentary online public engagement in the 21st century: a comparative perspective with a focus on Austria and Portugal</em>. Supervisor: Marina Costa Lobo. Approved with distinction and praise, by unanimous vote.</span></div></li>
+  <li><span class="when">2014</span><div class="what"><span class="t">MA, Political Science</span>
+    <span class="sub">ISCTE, Lisbon · final grade 18/20</span></div></li>
+  <li><span class="when">2012</span><div class="what"><span class="t">BA, Political Science</span>
+    <span class="sub">ISCTE, Lisbon · final grade 17/20</span></div></li>
+</ol>
+
+  </section>
+</main>
+<footer class="foot"><div class="wrap">Instituto de Ciências Sociais, Universidade de Lisboa · Updated October 2026</div></footer>
+
+</body>
+</html>
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Open Parliaments</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Caveat:wght@500;600&family=Familjen+Grotesk:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: sticky top bar, one long page of ruled sections. Blue and white, with the cover's orange as the single warm accent. */
+:root{
+  --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gutter:clamp(1rem,4vw,2.5rem);
+  --bg:#F7FAFF; --surface:#FFFFFF; --fg:#0B1F4B; --muted:#475A82; --rule:#D3DDF0;
+  --accent:#1D4ED8; --accent-ink:#FFFFFF; --accent-soft:#DCE7FF;
+  --panel:#0C1E4A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+  --edge:#0B1F4B; --band:#F79321; --band-ink:#0B1F4B; --c1:#1D4ED8; --c2:#B45309; --c3:#0B1F4B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1430; --surface:#0F1B3F; --fg:#E8EEFB; --muted:#9DB0D8; --rule:#24345F;
+    --accent:#7AA2FF; --accent-ink:#0A1430; --accent-soft:#1B2E63;
+    --panel:#13255A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+    --edge:#C7D5F5; --band:#F79321; --band-ink:#0B1F4B; --c1:#7AA2FF; --c2:#F79321; --c3:#C7D5F5;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1430; --surface:#0F1B3F; --fg:#E8EEFB; --muted:#9DB0D8; --rule:#24345F;
+  --accent:#7AA2FF; --accent-ink:#0A1430; --accent-soft:#1B2E63;
+  --panel:#13255A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+  --edge:#C7D5F5; --band:#F79321; --band-ink:#0B1F4B; --c1:#7AA2FF; --c2:#F79321; --c3:#C7D5F5;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.55;
+  margin:0;padding-inline:var(--gutter);padding-block:0;-webkit-text-size-adjust:100%}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+strong{font-weight:600}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.01em;line-height:1.1}
+p{margin:0}
+.wrap{max-width:66rem;margin-inline:auto}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--rule);margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter)}
+.top .wrap{display:flex;flex-wrap:wrap;gap:.35rem 1.75rem;justify-content:space-between;align-items:baseline;padding-block:.8rem}
+.brand{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--fg);text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.nav a{color:var(--muted);text-decoration:none;padding-block:.15rem}
+.nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:2.5rem 3rem;align-items:center;padding-block:clamp(2.5rem,7vw,5rem)}
+.kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(2.7rem,8vw,5.2rem);letter-spacing:-.03em;line-height:.98;margin-block:.9rem 1.4rem}
+.lead{font-size:clamp(1.15rem,2.4vw,1.35rem);line-height:1.5;max-width:34rem}
+.lead + .lead{margin-top:.9rem;color:var(--muted)}
+h1 .mark{background:linear-gradient(transparent 70%,var(--band) 70% 92%,transparent 92%);padding-inline:.04em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.who{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1.5rem;align-items:start}
+.portrait{width:9rem;height:auto;aspect-ratio:342/396;object-fit:cover;border:2px solid var(--edge);border-radius:8px}
+
+/* the dark book panel */
+.panel{background:var(--panel);color:var(--panel-fg);padding:1.75rem;display:grid;gap:1.1rem;min-width:0}
+.panel .kicker{color:var(--panel-accent)}
+.panel h2{font-size:clamp(1.9rem,4vw,2.5rem)}
+.panel .sub{color:var(--panel-muted);font-size:1rem}
+.panel .cv{width:min(100%,10rem);margin:0 8px 8px 0}
+.panel .meta{font-family:var(--mono);font-size:.8rem;color:var(--panel-muted)}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.98rem;text-decoration:none;
+  background:var(--accent);color:var(--accent-ink);padding:.65rem 1.1rem;justify-self:start}
+.btn:hover{text-decoration:underline}
+.panel .btn{background:var(--panel-accent);color:var(--band-ink)}
+
+/* sections */
+.sec{border-top:1px solid var(--rule);padding-block:clamp(2.2rem,5vw,3.4rem)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.5rem;justify-content:space-between;margin-bottom:1.5rem}
+.sec h2{font-size:clamp(1.7rem,3.6vw,2.3rem)}
+.sec-head p{color:var(--muted);font-size:.98rem;max-width:34rem}
+.rows.wide > li{grid-template-columns:8.5rem minmax(0,1fr)}
+.bio-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);gap:2.5rem 4rem;align-items:start;
+  padding-block:clamp(2.5rem,6vw,4rem)}
+.bio-hero h1{font-size:clamp(2.7rem,8vw,4.6rem);letter-spacing:-.03em;line-height:1;margin-block:.8rem 1.6rem}
+.bio-text{max-width:40rem;display:grid;gap:1.05rem;font-size:1.125rem}
+.bio-text ol.ab{margin:0;padding-left:1.7rem;display:grid;gap:.5rem}
+.bio-text ol.ab li::marker{content:counter(list-item,lower-alpha) ") ";font-family:var(--mono);font-size:.9rem;color:var(--accent)}
+.bio-side{position:sticky;top:5rem;display:grid;gap:.8rem;min-width:0}
+.bio-side img{width:100%;height:auto;aspect-ratio:342/396;object-fit:cover;border:2px solid var(--edge);border-radius:8px}
+.bio-side p{font-size:.95rem;color:var(--muted);line-height:1.4}
+.group{margin-top:2rem}
+.group:first-of-type{margin-top:0}
+.group h3{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding-bottom:.55rem;border-bottom:1px solid var(--fg);letter-spacing:.08em}
+.rows{list-style:none;margin:0;padding:0}
+.rows > li{display:grid;grid-template-columns:5.2rem minmax(0,1fr);gap:1rem;padding-block:.8rem;border-bottom:1px solid var(--rule)}
+.when{font-family:var(--mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:.2rem;line-height:1.4}
+.what{min-width:0;overflow-wrap:break-word}
+.what .t{font-family:var(--display);font-weight:600}
+.what .sub{display:block;color:var(--muted);font-size:.98rem}
+.what ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.98rem}
+.what li{margin-block:.1rem}
+.note{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);
+  border:1px solid currentColor;padding:.05rem .4rem;margin-left:.4rem;white-space:nowrap;display:inline-block;line-height:1.5}
+
+/* filter chips */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.chip{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;background:transparent;color:var(--fg);
+  border:1px solid var(--rule);padding:.4rem .8rem;cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* contact + footer */
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
+.addr{font-family:var(--mono);font-size:.95rem;user-select:all;overflow-wrap:anywhere}
+.copy{font-family:var(--mono);font-size:.75rem;background:transparent;color:var(--accent);border:1px solid var(--accent);padding:.3rem .7rem;cursor:pointer}
+.foot{border-top:1px solid var(--rule);padding-block:1.6rem 2.4rem;color:var(--muted);font-size:.92rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .bio-hero{grid-template-columns:minmax(0,1fr)}
+  .bio-side{order:-1;position:static;max-width:13rem}
+}
+@media (max-width:520px){
+  .rows.wide > li{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  .who{grid-template-columns:minmax(0,1fr)}
+  .portrait{width:7.5rem}
+}
+@media (max-width:480px){
+  .rows > li{grid-template-columns:minmax(0,1fr);gap:.15rem}
+  .when{padding-top:0}
+}
+
+/* Cover with an animated door: the leaf is cut from the cover art and swings open and shut over a lit room. */
+.cv{position:relative;container-type:inline-size;line-height:0}
+.cv{border-radius:2px 5px 5px 2px;
+  box-shadow:1px 1px 0 #f6f1e6,2px 2px 0 #d8d0bc,3px 3px 0 #f6f1e6,4px 4px 0 #cdc5b0,5px 5px 0 #f3eee2,6px 6px 0 #b9b19b,
+  14px 20px 26px -6px rgba(0,0,0,.45),4px 6px 8px rgba(0,0,0,.25)}
+.cv::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:5;
+  background:
+   linear-gradient(90deg,rgba(0,0,0,.32) 0,rgba(0,0,0,.05) .8%,rgba(255,255,255,.42) 1.6%,rgba(0,0,0,.2) 3%,rgba(0,0,0,0) 7%),
+   linear-gradient(115deg,rgba(255,255,255,.22) 0,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(0,0,0,.12) 100%)}
+@media (prefers-reduced-motion:reduce){.bk-feature .cv,.bk-feature .cv:hover{transform:none;transition:none}}
+
+.cv > img{display:block;width:100%;height:auto}
+.cv .dr{position:absolute;left:73.6%;top:9.38%;width:20.5%;height:26.4%;background:#E8B859;
+  perspective:120cqw;pointer-events:none}
+.cv .dr::before{content:"";position:absolute;inset:0;box-shadow:0 0 5cqw 2cqw rgba(255,232,140,.9);opacity:0;
+  animation:door-glow var(--door-dur,9s) infinite}
+.cv .room{position:absolute;left:6.25%;right:6.25%;top:3.42%;bottom:3.42%;
+  background:radial-gradient(ellipse 85% 75% at 35% 45%,#FFF8D2 0%,#FBE38E 58%,#EDB24E 100%)}
+.cv .leaf{position:absolute;left:6.25%;right:6.25%;top:3.42%;bottom:3.42%;transform-origin:100% 50%;
+  background:url(assets/cover.jpg) 91.3% 13.63%/556.9% auto no-repeat;backface-visibility:hidden;
+  animation:door-swing var(--door-dur,9s) infinite}
+.cv .leaf::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,22,0,.8),rgba(45,22,0,.15));
+  opacity:0;animation:door-shade var(--door-dur,9s) infinite}
+.cv.paused .dr::before,.cv.paused .leaf,.cv.paused .leaf::after{animation-play-state:paused}
+.cv .qclip{position:absolute;left:0;top:28.14%;width:73.6%;height:9.08%;overflow:hidden;pointer-events:none}
+.cv .queue{display:block;width:100%;height:100%;animation:q-walk calc(var(--door-dur,9s)*4) infinite,q-fade calc(var(--door-dur,9s)*4) infinite}
+.cv.paused .queue{animation-play-state:paused}
+@keyframes q-walk{
+0%,3.5%{transform:translateX(0)}15%,28.5%{transform:translateX(6%)}40%,53.5%{transform:translateX(12%)}
+65%,78.5%{transform:translateX(18%)}90%,97.5%{transform:translateX(24%)}98%,100%{transform:translateX(0)}}
+@keyframes q-fade{0%,96%{opacity:1}97.5%,99.5%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.cv .queue{animation:none}}
+@keyframes door-swing{
+  0%{transform:rotateY(0)}
+  10%{transform:rotateY(0);animation-timing-function:cubic-bezier(.4,.05,.25,1)}
+  30%{transform:rotateY(-80deg)}
+  60%{transform:rotateY(-80deg);animation-timing-function:cubic-bezier(.55,0,.35,1)}
+  78%{transform:rotateY(0)}
+  100%{transform:rotateY(0)}
+}
+@keyframes door-shade{0%,10%{opacity:0}30%,60%{opacity:.6}78%,100%{opacity:0}}
+@keyframes door-glow{0%,10%{opacity:0}30%,60%{opacity:1}78%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .cv .dr::before,.cv .leaf,.cv .leaf::after{animation:none}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+
+/* Book page: poster-like. Condensed display type, hard offset shadows, a dark stats band, one amber band. */
+:root{--disp:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--script:"Caveat","Segoe Print",cursive}
+.bk-top .wrap{align-items:center}
+.bk-nav{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.4rem}
+.bk-nav a.link{font-family:var(--display);font-weight:500;font-size:.98rem;color:var(--fg);text-decoration:none;
+  padding-block:.2rem;border-bottom:2px solid transparent}
+.bk-nav a.link:hover,.bk-nav a.link[aria-current="page"]{border-bottom-color:var(--fg)}
+.bk-btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--disp);font-weight:800;font-size:1.1rem;
+  letter-spacing:.03em;text-transform:uppercase;text-decoration:none;line-height:1;
+  padding:.8rem 1.15rem;border:2px solid var(--edge);border-radius:10px;background:var(--edge);color:var(--bg);
+  box-shadow:5px 5px 0 var(--band)}
+.bk-btn:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--band);text-decoration:none}
+.bk-btn.alt{background:transparent;color:var(--fg);box-shadow:none}
+.bk-btn.alt:hover{background:var(--surface);transform:none;box-shadow:none}
+.bk-btn.sm{font-size:.95rem;padding:.55rem .85rem;box-shadow:3px 3px 0 var(--band)}
+.bk-btn.band{box-shadow:5px 5px 0 var(--band-ink)}
+.bk-btn.band:hover{box-shadow:3px 3px 0 var(--band-ink)}
+
+.bk-hero{padding-block:clamp(2rem,6vw,4rem) clamp(2rem,5vw,3rem)}
+.bk-title{font-family:var(--disp);font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:.005em;
+  font-size:clamp(3.4rem,13vw,8.5rem);margin:0 0 .35em;width:fit-content;max-width:100%}
+.bk-title .scribble{display:block;width:100%;height:.14em;min-height:12px;margin-top:.05em}
+.bk-title .scribble path{stroke:var(--band);fill:none;stroke-width:9;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.bk-feature{display:grid;grid-template-columns:minmax(0,23rem) minmax(0,1fr);gap:2.5rem clamp(2rem,5vw,4rem);align-items:center}
+.bk-feature .cv{width:calc(100% - 12px);transform:perspective(1500px) rotateY(-9deg) rotateX(2deg);transform-origin:0 60%;transition:transform .5s ease}
+.bk-feature .cv:hover{transform:perspective(1500px) rotateY(-2deg) rotateX(0)}
+.bk-pause{font-family:var(--mono);font-size:.74rem;letter-spacing:.05em;background:none;border:0;color:var(--muted);
+  text-decoration:underline;cursor:pointer;margin-top:1.3rem;padding:.2rem 0}
+.bk-pause:hover{color:var(--accent)}
+.bk-feature .kicker{color:var(--accent)}
+.bk-feature .big{font-family:var(--disp);font-weight:800;text-transform:uppercase;line-height:.95;
+  font-size:clamp(2rem,4.8vw,3.3rem);margin-block:.5rem .7rem;text-wrap:balance}
+.bk-feature .by{font-size:1.15rem}
+.bk dl.facts,dl.facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:.5rem 1.5rem;margin:1.4rem 0 0;max-width:30rem}
+dl.facts dt{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:.25rem}
+dl.facts dd{margin:0}
+.bk-intro{padding-block:clamp(2rem,5vw,3rem) clamp(2.5rem,6vw,4rem);max-width:52rem}
+.bk-intro h2{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,3.8vw,2.4rem);line-height:1.12;margin-bottom:1rem}
+.bk-intro p{font-size:1.2rem;color:var(--fg);max-width:44rem}
+.bk-intro p + p{margin-top:.9rem;color:var(--muted)}
+.bk-cta{display:flex;flex-wrap:wrap;gap:1rem 1.25rem;margin-top:1.8rem}
+
+.bk-stats{background:var(--panel);color:var(--panel-fg);margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);
+  border-block:2px solid var(--edge)}
+.bk-stats ul{list-style:none;margin:0 auto;padding:clamp(2rem,5vw,3.25rem) 0;max-width:66rem;display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.5rem;text-align:center}
+.bk-stats svg{width:1.9rem;height:1.9rem;fill:none;stroke:var(--band);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bk-stats .n{display:block;font-family:var(--disp);font-weight:900;color:var(--band);line-height:1;
+  font-size:clamp(3rem,7vw,4.6rem);margin-block:.35rem .45rem;font-variant-numeric:tabular-nums}
+.bk-stats .l{display:block;color:var(--panel-muted);font-size:.98rem;line-height:1.35;max-width:14rem;margin-inline:auto}
+
+.bk-chapters{padding-block:clamp(2.5rem,6vw,4.5rem)}
+.bk-script{font-family:var(--script);font-weight:600;font-size:1.7rem;color:var(--c1);line-height:1}
+.bk-h2{font-family:var(--disp);font-weight:900;text-transform:uppercase;line-height:.95;letter-spacing:.005em;
+  font-size:clamp(2.4rem,6vw,4rem);margin:.15em 0 .4em;text-wrap:balance}
+.bk-lede{font-size:1.2rem;max-width:42rem;color:var(--muted)}
+.bk-grid{list-style:none;margin:2rem 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(15.5rem,1fr));gap:1.6rem}
+.bk-card{border:2px solid var(--edge);border-radius:14px;box-shadow:6px 6px 0 var(--edge);background:var(--surface);
+  padding:1.2rem 1.2rem 1.4rem;margin-right:6px;margin-bottom:6px;min-width:0;display:flex;flex-direction:column;gap:.5rem}
+.bk-card .num{font-family:var(--disp);font-weight:900;font-size:3rem;line-height:1;color:var(--pc,var(--c1))}
+.bk-card .part{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.bk-card h3{font-family:var(--display);font-weight:700;font-size:1.28rem;line-height:1.12;letter-spacing:-.005em}
+.bk-card.end{--pc:var(--c3)}
+.bk-card.p1{--pc:var(--c1)} .bk-card.p2{--pc:var(--c2)} .bk-card.p3{--pc:var(--c3)}
+.bk-bookend{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;align-items:baseline;border-top:2px solid var(--edge);
+  padding-block:.9rem;margin-top:1.4rem}
+.bk-bookend + .bk-bookend{margin-top:0;border-top:1px solid var(--rule)}
+.bk-bookend .part{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);min-width:6rem}
+.bk-bookend span.t{font-family:var(--display);font-weight:700;font-size:1.2rem;min-width:0;overflow-wrap:break-word}
+
+.bk-order{background:var(--band);color:var(--band-ink);margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);
+  border-block:2px solid var(--edge)}
+.bk-order .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,1fr);gap:2rem 3rem;align-items:center;
+  padding-block:clamp(2.2rem,5vw,3.4rem)}
+.bk-order h2{font-family:var(--disp);font-weight:900;text-transform:uppercase;line-height:.92;font-size:clamp(2.8rem,6.5vw,4.6rem)}
+.bk-order p{font-size:1.15rem}
+.bk-order .meta{font-family:var(--mono);font-size:.82rem;margin-top:.8rem;display:block}
+.bk-order .script{font-family:var(--script);font-weight:600;font-size:1.5rem;color:var(--band-ink);display:block;margin-bottom:.7rem}
+.bk-order .btns{display:grid;gap:1rem;justify-items:start}
+
+.bk-author{padding-block:clamp(2.5rem,6vw,4rem);display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1.5rem 2rem;align-items:center}
+.bk-photo{width:8.5rem;height:8.5rem;border-radius:50%;border:2px solid var(--edge);object-fit:cover;object-position:45% 22%;display:block}
+.bk-author h2{font-family:var(--disp);font-weight:900;text-transform:uppercase;font-size:clamp(2rem,5vw,3rem);line-height:1}
+.bk-author p{max-width:40rem;margin-block:.6rem 1.1rem}
+
+@media (max-width:860px){
+  .bk-order .wrap{grid-template-columns:minmax(0,1fr)}
+  .bk-stats ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .bk-feature{grid-template-columns:minmax(0,1fr)}
+  .bk-coverwrap{max-width:19rem}
+  .bk-author{grid-template-columns:minmax(0,1fr)}
+  .bk-photo{width:6.5rem;height:6.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="top bk-top"><div class="wrap"><a class="brand" href="index.html">Sofia Serra-Silva</a><nav class="bk-nav" aria-label="Sections"><a class="link" href="index.html">Home</a><a class="link" href="bio.html">Bio</a><a class="link" href="book.html" aria-current="page">My Book</a><a class="link" href="#chapters">Chapters</a><a class="link" href="#author">Author</a><a class="bk-btn sm" href="https://global.oup.com/academic/product/open-parliaments-9780198979159">Pre-order</a></nav></div></header>
+<main class="wrap bk" id="top">
+  <section class="bk-hero" aria-labelledby="bk-title">
+    <h1 class="bk-title" id="bk-title">Open Parliaments<svg class="scribble" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M4 15 C 70 3, 130 24, 200 11 S 330 20, 396 6"/></svg></h1>
+    <div class="bk-feature">
+      <div class="bk-coverwrap">
+        <div class="cv" id="cv"><img src="assets/cover_empty.jpg" width="921" height="1322" alt="Cover of Open Parliaments: The Reality of Public Engagement in European Democracies, by Sofia Serra-Silva"><span class="dr" aria-hidden="true"><span class="room"></span><span class="leaf"></span></span><span class="qclip" aria-hidden="true"><img class="queue" src="assets/queue.png" alt=""></span></div>
+        <button type="button" class="bk-pause" id="pause" aria-pressed="false">Pause the door animation</button>
+      </div>
+      <div>
+        <p class="kicker">Oxford University Press</p>
+        <p class="big">The Reality of Public Engagement in European Democracies</p>
+        <p class="by">Sofia Serra-Silva</p>
+        <dl class="facts">
+          <dt>Publication</dt><dd>26 November 2026 (publisher’s estimate)</dd>
+          <dt>Format</dt><dd>Hardback, 304 pages, 234 × 156 mm</dd>
+          <dt>Price</dt><dd>£110.00</dd>
+          <dt>ISBN</dt><dd>9780198979159</dd>
+          <dt>Also</dt><dd>E-book through your preferred provider</dd>
+        </dl>
+        <div class="bk-cta">
+          <a class="bk-btn" href="https://global.oup.com/academic/product/open-parliaments-9780198979159">Pre-order from OUP</a>
+          <a class="bk-btn alt" href="#chapters">Explore the chapters &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bk-intro" aria-labelledby="bk-intro-h">
+    <h2 id="bk-intro-h">Are parliaments really opening their doors to citizens?</h2>
+    <p>Trust in political institutions has worn thin, and parliaments sit at the centre of that problem. <em>Open Parliaments</em> asks whether they can help repair it: do they keep their promises of openness and public engagement, or is the change mostly symbolic?</p>
+    <p>The book compares twenty-one European parliaments and follows two in-depth cases, Austria and France, where new engagement practices have become part of parliamentary routine. It finds a narrow openness. Information is published and participation is possible, yet material is hard to read, participatory tools rarely carry consequences, and those who take part are mostly people already close to power.</p>
+  </section>
+
+  <div class="bk-stats" aria-label="The book in numbers">
+    <ul>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10m4 11V10m6 11V10m4 11V10M2 10l10-6 10 6z"/></svg><span class="n">21</span><span class="l">European parliaments compared</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></svg><span class="n">2</span><span class="l">in-depth case studies: Austria and France</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-6M12 20V6M19 20v-10"/></svg><span class="n">3</span><span class="l">types of parliament: broadcaster, communicator, participatory</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span class="n">4</span><span class="l">dimensions of delivery: usability, accessibility, responsiveness, readability</span></li>
+    </ul>
+  </div>
+
+  <section class="bk-chapters" id="chapters" aria-labelledby="chap-h">
+    <span class="bk-script">Inside the book</span>
+    <h2 class="bk-h2" id="chap-h">Seven chapters, one argument</h2>
+    <p class="bk-lede">Three parts take the reader from the theory of engagement, to a comparison across Europe, to the two cases where parliaments have tried something new.</p>
+    <div class="bk-bookend"><span class="part">Opening</span><span class="t">Introduction</span></div>
+    <ol class="bk-grid">
+      <li class="bk-card p1"><span class="num">01</span><span class="part">Part I · Theory and questions</span><h3>Parliaments in the Spotlight: The Complex Relationship with Citizens</h3></li>
+<li class="bk-card p1"><span class="num">02</span><span class="part">Part I · Theory and questions</span><h3>Research Design, Case Selection, and Methods</h3></li>
+<li class="bk-card p2"><span class="num">03</span><span class="part">Part II · European parliaments</span><h3>From Passive to Active Engagement: How Parliaments Engage with Their Citizens?</h3></li>
+<li class="bk-card p2"><span class="num">04</span><span class="part">Part II · European parliaments</span><h3>Beyond the Veil of Engagement: Are Parliaments Truly ‘Open’?</h3></li>
+<li class="bk-card p3"><span class="num">05</span><span class="part">Part III · Austria and France</span><h3>Between Tradition and Innovation: Designing Novel Instruments for Engagement</h3></li>
+<li class="bk-card p3"><span class="num">06</span><span class="part">Part III · Austria and France</span><h3>Who Engages with Parliaments?</h3></li>
+<li class="bk-card p3"><span class="num">07</span><span class="part">Part III · Austria and France</span><h3>Conclusion</h3></li>
+<li class="bk-card end"><span class="num">A</span><span class="part">Afterword</span><h3>A Memo to Parliamentary Officials and Members of Parliament</h3></li>
+    </ol>
+  </section>
+</main>
+
+<section class="bk-order" aria-labelledby="order-h">
+  <div class="wrap">
+    <h2 id="order-h">Ready for pre-order.</h2>
+    <div>
+      <p><em>Open Parliaments</em> is published by Oxford University Press as a hardback. An e-book is available through your preferred e-book provider.</p>
+      <span class="meta">£110.00 · 304 pages · 234 × 156 mm · ISBN 9780198979159 · publication 26 November 2026 (publisher’s estimate)</span>
+    </div>
+    <div class="btns">
+      <span class="script">Order from the publisher</span>
+      <a class="bk-btn band" href="https://global.oup.com/academic/product/open-parliaments-9780198979159">Pre-order at OUP</a>
+    </div>
+  </div>
+</section>
+
+<main class="wrap bk">
+  <section class="bk-author" id="author" aria-labelledby="author-h">
+    <img class="bk-photo" src="assets/sofia.jpg" width="342" height="396" alt="Portrait of Sofia Serra-Silva">
+    <div>
+      <h2 id="author-h">Sofia Serra-Silva</h2>
+      <p>Research Professor at the Institute of Social Sciences, University of Lisbon. She holds a PhD in Comparative Politics (2020) and has held visiting positions at the Université libre de Bruxelles and Georgetown University. Her work has appeared in <em>Policy &amp; Internet</em>, <em>Party Politics</em>, <em>Parliamentary Affairs</em> and the <em>Journal of Legislative Studies</em>.</p>
+      <a class="bk-btn alt" href="bio.html">More about the author &rarr;</a>
+    </div>
+  </section>
+</main>
+<footer class="foot"><div class="wrap"><a href="index.html">Sofia Serra-Silva</a> · Institute of Social Sciences, University of Lisbon · Price, format and date from the publisher’s listing</div></footer>
+<script>
+(function(){
+  var cv=document.getElementById('cv'), btn=document.getElementById('pause');
+  if(!cv||!btn) return;
+  btn.addEventListener('click',function(){
+    var paused=cv.classList.toggle('paused');
+    btn.setAttribute('aria-pressed',paused?'true':'false');
+    btn.textContent=paused?'Play the door animation':'Pause the door animation';
+  });
+})();
+</script>
+
+</body>
+</html>
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sofia Serra-Silva</title>
+<meta name="description" content="Sofia Serra-Silva, political scientist at the Institute of Social Sciences, University of Lisbon. Publications, teaching and the book Open Parliaments.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+img{max-width:100%}
+[hidden]{display:none!important}
+
+/* Layout: sticky top bar, one long page of ruled sections. Blue and white, with the cover's orange as the single warm accent. */
+:root{
+  --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --gutter:clamp(1rem,4vw,2.5rem);
+  --bg:#F7FAFF; --surface:#FFFFFF; --fg:#0B1F4B; --muted:#475A82; --rule:#D3DDF0;
+  --accent:#1D4ED8; --accent-ink:#FFFFFF; --accent-soft:#DCE7FF;
+  --panel:#0C1E4A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+  --edge:#0B1F4B; --band:#F79321; --band-ink:#0B1F4B; --c1:#1D4ED8; --c2:#B45309; --c3:#0B1F4B;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0A1430; --surface:#0F1B3F; --fg:#E8EEFB; --muted:#9DB0D8; --rule:#24345F;
+    --accent:#7AA2FF; --accent-ink:#0A1430; --accent-soft:#1B2E63;
+    --panel:#13255A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+    --edge:#C7D5F5; --band:#F79321; --band-ink:#0B1F4B; --c1:#7AA2FF; --c2:#F79321; --c3:#C7D5F5;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0A1430; --surface:#0F1B3F; --fg:#E8EEFB; --muted:#9DB0D8; --rule:#24345F;
+  --accent:#7AA2FF; --accent-ink:#0A1430; --accent-soft:#1B2E63;
+  --panel:#13255A; --panel-fg:#F1F5FF; --panel-accent:#F79321; --panel-muted:#AEBCE0;
+  --edge:#C7D5F5; --band:#F79321; --band-ink:#0B1F4B; --c1:#7AA2FF; --c2:#F79321; --c3:#C7D5F5;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:1.0625rem;line-height:1.55;
+  margin:0;padding-inline:var(--gutter);padding-block:0;-webkit-text-size-adjust:100%}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+strong{font-weight:600}
+h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.01em;line-height:1.1}
+p{margin:0}
+.wrap{max-width:66rem;margin-inline:auto}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);
+  border-bottom:1px solid var(--rule);margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter)}
+.top .wrap{display:flex;flex-wrap:wrap;gap:.35rem 1.75rem;justify-content:space-between;align-items:baseline;padding-block:.8rem}
+.brand{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--fg);text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase}
+.nav a{color:var(--muted);text-decoration:none;padding-block:.15rem}
+.nav a:hover{color:var(--accent)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:2.5rem 3rem;align-items:center;padding-block:clamp(2.5rem,7vw,5rem)}
+.kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(2.7rem,8vw,5.2rem);letter-spacing:-.03em;line-height:.98;margin-block:.9rem 1.4rem}
+.lead{font-size:clamp(1.15rem,2.4vw,1.35rem);line-height:1.5;max-width:34rem}
+.lead + .lead{margin-top:.9rem;color:var(--muted)}
+h1 .mark{background:linear-gradient(transparent 70%,var(--band) 70% 92%,transparent 92%);padding-inline:.04em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone}
+.who{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:1.5rem;align-items:start}
+.portrait{width:9rem;height:auto;aspect-ratio:342/396;object-fit:cover;border:2px solid var(--edge);border-radius:8px}
+
+/* the dark book panel */
+.panel{background:var(--panel);color:var(--panel-fg);padding:1.75rem;display:grid;gap:1.1rem;min-width:0}
+.panel .kicker{color:var(--panel-accent)}
+.panel h2{font-size:clamp(1.9rem,4vw,2.5rem)}
+.panel .sub{color:var(--panel-muted);font-size:1rem}
+.panel .cv{width:min(100%,10rem);margin:0 8px 8px 0}
+.panel .meta{font-family:var(--mono);font-size:.8rem;color:var(--panel-muted)}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.98rem;text-decoration:none;
+  background:var(--accent);color:var(--accent-ink);padding:.65rem 1.1rem;justify-self:start}
+.btn:hover{text-decoration:underline}
+.panel .btn{background:var(--panel-accent);color:var(--band-ink)}
+
+/* sections */
+.sec{border-top:1px solid var(--rule);padding-block:clamp(2.2rem,5vw,3.4rem)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.5rem;justify-content:space-between;margin-bottom:1.5rem}
+.sec h2{font-size:clamp(1.7rem,3.6vw,2.3rem)}
+.sec-head p{color:var(--muted);font-size:.98rem;max-width:34rem}
+.rows.wide > li{grid-template-columns:8.5rem minmax(0,1fr)}
+.bio-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,15rem);gap:2.5rem 4rem;align-items:start;
+  padding-block:clamp(2.5rem,6vw,4rem)}
+.bio-hero h1{font-size:clamp(2.7rem,8vw,4.6rem);letter-spacing:-.03em;line-height:1;margin-block:.8rem 1.6rem}
+.bio-text{max-width:40rem;display:grid;gap:1.05rem;font-size:1.125rem}
+.bio-text ol.ab{margin:0;padding-left:1.7rem;display:grid;gap:.5rem}
+.bio-text ol.ab li::marker{content:counter(list-item,lower-alpha) ") ";font-family:var(--mono);font-size:.9rem;color:var(--accent)}
+.bio-side{position:sticky;top:5rem;display:grid;gap:.8rem;min-width:0}
+.bio-side img{width:100%;height:auto;aspect-ratio:342/396;object-fit:cover;border:2px solid var(--edge);border-radius:8px}
+.bio-side p{font-size:.95rem;color:var(--muted);line-height:1.4}
+.group{margin-top:2rem}
+.group:first-of-type{margin-top:0}
+.group h3{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding-bottom:.55rem;border-bottom:1px solid var(--fg);letter-spacing:.08em}
+.rows{list-style:none;margin:0;padding:0}
+.rows > li{display:grid;grid-template-columns:5.2rem minmax(0,1fr);gap:1rem;padding-block:.8rem;border-bottom:1px solid var(--rule)}
+.when{font-family:var(--mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:.2rem;line-height:1.4}
+.what{min-width:0;overflow-wrap:break-word}
+.what .t{font-family:var(--display);font-weight:600}
+.what .sub{display:block;color:var(--muted);font-size:.98rem}
+.what ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--muted);font-size:.98rem}
+.what li{margin-block:.1rem}
+.note{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);
+  border:1px solid currentColor;padding:.05rem .4rem;margin-left:.4rem;white-space:nowrap;display:inline-block;line-height:1.5}
+
+/* filter chips */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.chip{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;background:transparent;color:var(--fg);
+  border:1px solid var(--rule);padding:.4rem .8rem;cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* contact + footer */
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1rem}
+.addr{font-family:var(--mono);font-size:.95rem;user-select:all;overflow-wrap:anywhere}
+.copy{font-family:var(--mono);font-size:.75rem;background:transparent;color:var(--accent);border:1px solid var(--accent);padding:.3rem .7rem;cursor:pointer}
+.foot{border-top:1px solid var(--rule);padding-block:1.6rem 2.4rem;color:var(--muted);font-size:.92rem}
+
+@media (max-width:760px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .bio-hero{grid-template-columns:minmax(0,1fr)}
+  .bio-side{order:-1;position:static;max-width:13rem}
+}
+@media (max-width:520px){
+  .rows.wide > li{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:520px){
+  .who{grid-template-columns:minmax(0,1fr)}
+  .portrait{width:7.5rem}
+}
+@media (max-width:480px){
+  .rows > li{grid-template-columns:minmax(0,1fr);gap:.15rem}
+  .when{padding-top:0}
+}
+
+/* Cover with an animated door: the leaf is cut from the cover art and swings open and shut over a lit room. */
+.cv{position:relative;container-type:inline-size;line-height:0}
+.cv{border-radius:2px 5px 5px 2px;
+  box-shadow:1px 1px 0 #f6f1e6,2px 2px 0 #d8d0bc,3px 3px 0 #f6f1e6,4px 4px 0 #cdc5b0,5px 5px 0 #f3eee2,6px 6px 0 #b9b19b,
+  14px 20px 26px -6px rgba(0,0,0,.45),4px 6px 8px rgba(0,0,0,.25)}
+.cv::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:5;
+  background:
+   linear-gradient(90deg,rgba(0,0,0,.32) 0,rgba(0,0,0,.05) .8%,rgba(255,255,255,.42) 1.6%,rgba(0,0,0,.2) 3%,rgba(0,0,0,0) 7%),
+   linear-gradient(115deg,rgba(255,255,255,.22) 0,rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,rgba(0,0,0,.12) 100%)}
+@media (prefers-reduced-motion:reduce){.bk-feature .cv,.bk-feature .cv:hover{transform:none;transition:none}}
+
+.cv > img{display:block;width:100%;height:auto}
+.cv .dr{position:absolute;left:73.6%;top:9.38%;width:20.5%;height:26.4%;background:#E8B859;
+  perspective:120cqw;pointer-events:none}
+.cv .dr::before{content:"";position:absolute;inset:0;box-shadow:0 0 5cqw 2cqw rgba(255,232,140,.9);opacity:0;
+  animation:door-glow var(--door-dur,9s) infinite}
+.cv .room{position:absolute;left:6.25%;right:6.25%;top:3.42%;bottom:3.42%;
+  background:radial-gradient(ellipse 85% 75% at 35% 45%,#FFF8D2 0%,#FBE38E 58%,#EDB24E 100%)}
+.cv .leaf{position:absolute;left:6.25%;right:6.25%;top:3.42%;bottom:3.42%;transform-origin:100% 50%;
+  background:url(assets/cover.jpg) 91.3% 13.63%/556.9% auto no-repeat;backface-visibility:hidden;
+  animation:door-swing var(--door-dur,9s) infinite}
+.cv .leaf::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(45,22,0,.8),rgba(45,22,0,.15));
+  opacity:0;animation:door-shade var(--door-dur,9s) infinite}
+.cv.paused .dr::before,.cv.paused .leaf,.cv.paused .leaf::after{animation-play-state:paused}
+.cv .qclip{position:absolute;left:0;top:28.14%;width:73.6%;height:9.08%;overflow:hidden;pointer-events:none}
+.cv .queue{display:block;width:100%;height:100%;animation:q-walk calc(var(--door-dur,9s)*4) infinite,q-fade calc(var(--door-dur,9s)*4) infinite}
+.cv.paused .queue{animation-play-state:paused}
+@keyframes q-walk{
+0%,3.5%{transform:translateX(0)}15%,28.5%{transform:translateX(6%)}40%,53.5%{transform:translateX(12%)}
+65%,78.5%{transform:translateX(18%)}90%,97.5%{transform:translateX(24%)}98%,100%{transform:translateX(0)}}
+@keyframes q-fade{0%,96%{opacity:1}97.5%,99.5%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.cv .queue{animation:none}}
+@keyframes door-swing{
+  0%{transform:rotateY(0)}
+  10%{transform:rotateY(0);animation-timing-function:cubic-bezier(.4,.05,.25,1)}
+  30%{transform:rotateY(-80deg)}
+  60%{transform:rotateY(-80deg);animation-timing-function:cubic-bezier(.55,0,.35,1)}
+  78%{transform:rotateY(0)}
+  100%{transform:rotateY(0)}
+}
+@keyframes door-shade{0%,10%{opacity:0}30%,60%{opacity:.6}78%,100%{opacity:0}}
+@keyframes door-glow{0%,10%{opacity:0}30%,60%{opacity:1}78%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  .cv .dr::before,.cv .leaf,.cv .leaf::after{animation:none}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth;scroll-padding-top:4rem}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap"><a class="brand" href="index.html">Sofia Serra-Silva</a><nav class="nav" aria-label="Sections"><a href="bio.html">Bio</a><a href="book.html">My Book</a><a href="#publications">Publications</a><a href="#teaching">Teaching</a><a href="#contact">Contact</a></nav></div></header>
+<main class="wrap">
+  <section class="hero" id="top">
+    <div>
+      <p class="kicker">Political science · Comparative politics</p>
+      <h1>Sofia <span class="mark">Serra-Silva</span></h1>
+      <div class="who">
+        <img class="portrait" src="assets/sofia.jpg" width="342" height="396" alt="Portrait of Sofia Serra-Silva">
+        <div>
+          <p class="lead">Research Professor at the Institute of Social Sciences, University of Lisbon.</p>
+          <p class="lead">I study how parliaments and citizens meet: how legislatures open up, who takes part when they do, and whether the openness changes anything.</p>
+        </div>
+      </div>
+    </div>
+    <aside class="panel" id="book" aria-labelledby="book-title">
+      <p class="kicker">Oxford University Press</p>
+      <div class="cv"><img src="assets/cover.jpg" width="921" height="1322" alt="Cover of Open Parliaments: The Reality of Public Engagement in European Democracies, by Sofia Serra-Silva"></div>
+      <div>
+        <h2 id="book-title">Open Parliaments</h2>
+        <p class="sub">The Reality of Public Engagement in European Democracies</p>
+      </div>
+      <p class="meta">26 November 2026 (publisher’s estimate) · Hardback</p>
+      <a class="btn" href="book.html">My Book</a>
+    </aside>
+  </section>
+
+  <section class="sec" id="publications" aria-labelledby="pub-h">
+    <div class="sec-head">
+      <h2 id="pub-h">Publications</h2>
+      <p>Books, articles, chapters and reports, most recent first.</p>
+    </div>
+    <div class="chips" role="group" aria-label="Filter publications">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="books" aria-pressed="false">Books</button>
+      <button class="chip" type="button" data-filter="articles" aria-pressed="false">Articles</button>
+      <button class="chip" type="button" data-filter="chapters" aria-pressed="false">Chapters</button>
+      <button class="chip" type="button" data-filter="other" aria-pressed="false">Reports and entries</button>
+      <button class="chip" type="button" data-filter="wip" aria-pressed="false">In progress</button>
+    </div>
+    <div class="group" data-kind="books" id="books"><h3>Books</h3>
+<ol class="rows">
+<li><span class="when">2026</span><p class="what"><strong>Serra-Silva</strong>, S. (2026) <a href="book.html"><em>Open Parliaments: The Reality of Public Engagement in European Democracies</em></a>. Oxford University Press.</p></li>
+<li><span class="when">2024</span><p class="what"><strong>Serra-Silva</strong>, S. (2024) <em>Parlamento de Portas Abertas? A relação da AR com os cidadãos</em> [Open Doors’ Parliament? The relationship between the Assembleia da República and citizens]. Lisbon: Assembleia da República.</p></li>
+<li><span class="when">2022</span><p class="what">Lisi, M. (coord.), Dias, A., Silva, J., Loureiro, J., Nunes, P., Oliveira, R. and <strong>Serra-Silva</strong>, S. (2022) <em>Os grupos de interesse no sistema político português</em> [Interest groups in the Portuguese political system]. Lisboa: FFMS, Coleção Estudos Científicos.</p></li>
+</ol>
+</div>
+<div class="group" data-kind="articles" id="articles"><h3>Journal articles</h3>
+<ol class="rows">
+<li><span class="when">2025</span><p class="what"><strong>Serra-Silva</strong>, S., Lopes, R. C., Coroado, S. and Cardoso, M. (2025) “Transparência, produção de dados e acesso à informação em Portugal: Uma análise crítica para a melhoria da qualidade da democracia”. <em>Análise Social</em>.</p></li>
+<li><span class="when">2024</span><p class="what"><strong>Serra-Silva</strong>, S. and Silva, J. G. (2024) “Empowering the People: The Evolution and Impact of Portugal’s Citizens’ Legislative Initiatives in a Comparative Perspective”. <em>Parliamentary Affairs</em>.</p></li>
+<li><span class="when">2024</span><p class="what"><strong>Serra-Silva</strong>, S. and Santos, N. (2024) “The 2021 Portuguese Presidential Election under extraordinary circumstances: COVID-19 and the rise of the radical right in Portugal”. <em>Mediterranean Politics, 29(3): 390–400</em>.</p></li>
+<li><span class="when">2024</span><p class="what"><strong>Serra-Silva</strong>, S. and Raimundo, F. (2024) “Exploratory Sequential Mixed-Method Design in Transitional Justice Research: A Methodological Research Note from Portugal”. <em>Análise Social, 59(253): 2–20</em>.</p></li>
+<li><span class="when">2023</span><p class="what"><strong>Serra-Silva</strong>, S. (2023) “Beyond national boundaries in the study of digital public engagement: the role of inter-parliamentary institutions and cooperation in the Austrian and Portuguese Parliaments”. <em>Policy &amp; Internet, 15(1): 36–54</em>.</p></li>
+<li><span class="when">2022</span><p class="what"><strong>Serra-Silva</strong>, S. (2022) “How parliaments engage with citizens? Online public engagement: a comparative analysis of parliamentary websites”. <em>Journal of Legislative Studies, 28(4): 489–512</em>.</p></li>
+<li><span class="when">2020</span><p class="what">Espírito-Santo, A., Freire, A. and <strong>Serra-Silva</strong>, S. (2020) “Does women’s descriptive representation matter for policy preferences? The role of political parties”. <em>Party Politics, 26(2): 227–237</em>.</p></li>
+<li><span class="when">2020</span><p class="what"><strong>Serra-Silva</strong>, S. and Belchior, A. M. (2020) “Understanding the pledge fulfilment of opposition parties using evidence from Portugal”. <em>European Politics and Society, 21(1): 72–90</em>.</p></li>
+<li><span class="when">2020</span><p class="what"><strong>Serra-Silva</strong>, S., Rã, M., Ferreira, D. and Carvalho, L. (2020) “As Eleições Europeias de 2019 em Portugal: Um teste à geringonça?”. <em>Relações Internacionais, 64: 15–32</em>.</p></li>
+</ol>
+</div>
+<div class="group" data-kind="chapters" id="chapters-int"><h3>Book chapters, international publishers</h3>
+<ol class="rows">
+<li><span class="when">2025</span><p class="what"><strong>Serra-Silva</strong>, S. (2025) “Legislatures”. In Gherghina, S., Pilet, J.-B. and Suiter, J. (eds), <em>Practices of Democracy: An Introduction</em>. London: Sage.</p></li>
+<li><span class="when">2023</span><p class="what"><strong>Serra-Silva</strong>, S. and Santos, N. (2023) “Continuity and change in Portuguese politics: towards a more polarised party system?”. In Costa Pinto, A. (ed.), <em>Portugal After the 2008 Crisis: Resilience and Change</em>. London: Taylor &amp; Francis.</p></li>
+<li><span class="when">2023</span><p class="what"><strong>Serra-Silva</strong>, S. and Oliveira, R. (2023) “Associational involvement and political participation in Portugal: insights from a longitudinal and comparative study”. In Lisi, M. (ed.), <em>Interest Groups and Political Representation in Portugal and Beyond</em>. London: Palgrave Macmillan.</p></li>
+<li><span class="when">2021</span><p class="what">Lisi, M. and <strong>Serra-Silva</strong>, S. (2021) “Ideological coherence within parties: Portugal and Spain”. In Coller, X. and Sánchez-Ferrer, L. (eds), <em>Politicians in Hard Times: Facing Citizens after the Great Recession in Spain and Southern Europe</em>. Palgrave.</p></li>
+<li><span class="when">2020</span><p class="what">Coller, X., Freire, A., Andreadis, I., Jaime, A., <strong>Serra-Silva</strong>, S. and Kartsounidou, E. (2020) “Methodological issues in the studies of political elites: evidence and reflections about the cases of Greece, Spain and Portugal”. In Freire, A., Barragán, M., Coller, X., Lisi, M. and Tsatsanis, E. (eds), <em>Political Representation in Southern Europe and Latin America: Crisis or Continuing Transformation?</em>. London: Routledge.</p></li>
+<li><span class="when">2020</span><p class="what">Prata, A., Freire, A. and <strong>Serra-Silva</strong>, S. (2020) “Gender and political representation before and after the Great Recession, 2008–2017”. In Lisi, M., Freire, A. and Tsatsanis, E. (eds), <em>Political Representation and Citizenship in Portugal: from Crisis to Renewal</em>. New York: Lexington.</p></li>
+<li><span class="when">2018</span><p class="what"><strong>Serra-Silva</strong>, S., Carvalho, D. D. and Fazendeiro, J. (2018) “Party-citizen online challenges: Portuguese parties’ Facebook usage and audience engagement”. In Lobo, M. C., Silva, F. C. and Zuquete, P. (eds), <em>Citizenship in Crisis: Changing Societies, Legacies and Challenges</em>. Lisbon: Imprensa de Ciências Sociais.</p></li>
+</ol>
+</div>
+<div class="group" data-kind="chapters" id="chapters-pt"><h3>Book chapters, Portuguese publishers</h3>
+<ol class="rows">
+<li><span class="when">2024</span><p class="what">Santos, N. and <strong>Serra-Silva</strong>, S. (2024) “O eleitorado do Partido Comunista Português: o que nos dizem os inquéritos? [The electorate of the Portuguese Communist Party: what do surveys tell us?]”. In Costa Lobo, M. and Espírito-Santo, A. (eds), <em>O Eleitorado Português no Século XXI</em>. Lisboa: Tinta da China.</p></li>
+<li><span class="when">2024</span><p class="what">Espírito-Santo, A., <strong>Serra-Silva</strong>, S. and Santos, N. (2024) “Quem vota no Partido Socialista? Duas décadas de sucesso eleitoral [Who votes for the Socialist Party? Two decades of electoral success]”. In Costa Lobo, M. and Espírito-Santo, A. (eds), <em>O Eleitorado Português no Século XXI</em>. Lisboa: Tinta da China.</p></li>
+<li><span class="when">2023</span><p class="what"><strong>Serra-Silva</strong>, S. (2023) “O Portugal democrático e europeu: o caminho trilhado, os desafios e o que falta percorrer [The democratic and European Portugal: progress, challenges and what lies ahead]”. In Cardoso, M. D. (coord.), <em>E Depois da Revolução: Cinco Décadas de Democracia</em>. Lisboa: FFMS.</p></li>
+<li><span class="when">2023</span><p class="what">Sanches, A., Espírito-Santo, A. and <strong>Serra-Silva</strong>, S. (2023) “Uma exceção ao declínio eleitoral da social-democracia? O caso do Partido Socialista Português [An exception to the demise of social democracy? The case of the Portuguese Socialist Party]”. In Freire, A., Arconero, G. and Queiroga, V. (eds). Lisboa: Mundos Sociais.</p></li>
+<li><span class="when">2021</span><p class="what"><strong>Serra-Silva</strong>, S. and Nina, S. (2021) “Cobertura mediática online das eleições de 2019 para o Parlamento Europeu em Portugal: uma análise à oferta e procura [Online media coverage of the 2019 European Parliament election in Portugal: a supply and demand analysis]”. In Simões, S. (ed.), <em>Narrar e Viver a Europa: a Cobertura das Eleições para o Parlamento Europeu</em>. Lisboa: Almedina.</p></li>
+<li><span class="when">2020</span><p class="what">Nina, S. and <strong>Serra-Silva</strong>, S. (2020) “Comportamento político, segundo Pedro Magalhães [Political behaviour, according to Pedro Magalhães]”. In Camerlo, M., Malamud, A. and Pinto, R. V. (eds), <em>Ciência Política à Portuguesa: A disciplina contada pelos protagonistas</em>. Lisboa: Imprensa de Ciências Sociais.</p></li>
+<li><span class="when">2019</span><p class="what">Espírito-Santo, A., Freire, A. and <strong>Serra-Silva</strong>, S. (2019) “A representação descritiva das mulheres é importante para as preferências políticas? O papel dos partidos políticos [Does women’s descriptive representation matter for policy preferences? The role of political parties]”. In Pires, A. P., Mariano, F. and Veiga, I. (eds), <em>Mulheres e Eleições</em>. Lisboa: Almedina.</p></li>
+<li><span class="when">2018</span><p class="what">Lobo, M. C. and <strong>Serra-Silva</strong>, S. (2018) “Abrindo a caixa de Pandora: o problema do financiamento partidário num sistema de voto preferencial [Opening Pandora’s box: the problem of party financing in a preferential voting system]”. In Lobo, M. C. (org.), <em>Sistema Eleitoral Português: Problemas e Soluções</em>. Lisboa: Almedina.</p></li>
+<li><span class="when">2016</span><p class="what">Freire, A., Espírito-Santo, A. and <strong>Serra-Silva</strong>, S. (2016) “A representação descritiva de género no Parlamento faz diferença nas preferências políticas? O papel dos partidos políticos [Does gender descriptive representation in parliament make a difference for policy preferences? The role of political parties]”. In Freire, A., Lisi, M. and Viegas, J. (eds), <em>Representação e participação política na Europa em crise</em>. Lisboa: Assembleia da República.</p></li>
+<li><span class="when">2015</span><p class="what">Freire, A. and <strong>Serra-Silva</strong>, S. (2015) “A opinião pública de direita, antes e depois da crise de 2008: Portugal em perspetiva comparada [Right-wing public opinion before and after the 2008 crisis: Portugal in comparative perspective]”. In Marchi, R. (ed.), <em>As Direitas na Democracia Portuguesa: origens, percursos, mudanças e novos desafios</em>. Lisboa: Leya.</p></li>
+<li><span class="when">2015</span><p class="what">Lima, I. and <strong>Serra-Silva</strong>, S. (2015) “Procedimento de recolha e tratamento de dados no estudo da representação política [Data collection and processing in the study of political representation]”. In Freire, A., Viegas, J. and Lisi, M. (eds), <em>Crise Económica, Políticas de Austeridade e Representação Política</em>. Lisboa: Assembleia da República.</p></li>
+<li><span class="when">2015</span><p class="what">Viegas, J. M. L., Santos, S. and <strong>Serra-Silva</strong>, S. (2015) “Apoio dos cidadãos e deputados à deliberação política: efeitos da crise económica e social [Citizens’ and MPs’ support for political deliberation: effects of the economic and social crisis]”. In Freire, A., Viegas, J. and Lisi, M. (eds), <em>Crise Económica, Políticas de Austeridade e Representação Política</em>. Lisboa: Assembleia da República.</p></li>
+</ol>
+</div>
+<div class="group" data-kind="other" id="other"><h3>Reports and reference entries</h3>
+<ol class="rows">
+<li><span class="when">2024</span><p class="what"><strong>Serra-Silva</strong>, S., Jalali, C. and Molino, C. (2024) <em>Portugal Report: Sustainable Governance Indicators 2024</em>. Bertelsmann Stiftung.</p></li>
+<li><span class="when">2021</span><p class="what">Gouveia, R., <strong>Serra-Silva</strong>, S., Almeida, A. N., Wall, K., Vieira, M. M., Carvalho, D. and Ribeiro, A. S. (2021) <em>Os Impactos Sociais da Pandemia: o Segundo Confinamento</em>. Lisboa: ICS, Universidade de Lisboa.</p></li>
+<li><span class="when">2021</span><p class="what"><strong>Serra-Silva</strong>, S., Espírito-Santo, A. and Thijm, J. (2021) “Ramondt-Hirschmann, Cornelia”. In Baltazar, I., Cunha, A. and Lousada, I. (coords), <em>Dicionário das Mulheres e a Unidade da Europa</em>. Lisboa: Almedina.</p></li>
+</ol>
+</div>
+<div class="group" data-kind="wip" id="wip"><h3>Work in progress</h3>
+<ol class="rows">
+<li><span class="when">—</span><p class="what">Espírito-Santo, A., <strong>Serra-Silva</strong>, S. and Santos, N. “Chronicle of a Death Foretold or the Portuguese Exception to the Demise of Social Democracy?” <span class="note">Revise and resubmit · South European Society &amp; Politics</span></p></li>
+<li><span class="when">—</span><p class="what">Belchior, A., Lopes, H., Queiroga, V., Matias, A. and <strong>Serra-Silva</strong>, S. “Moving online? The use of web surveys in political science research (2005–2019)” <span class="note">Revise and resubmit · European Political Science</span></p></li>
+<li><span class="when">—</span><p class="what">Santos, N., <strong>Serra-Silva</strong>, S. and Silva, T. C. “Consensus and Conflict in the Portuguese Parliament: A Study of Voting Behaviour Before and After the Rise of the Radical Right” <span class="note">Under review · Frontiers in Political Science</span></p></li>
+<li><span class="when">—</span><p class="what"><strong>Serra-Silva</strong>, S. and Leston-Bandeira, C. “The Invisible Architects of Public Engagement: The role of parliamentary administrations” <span class="note">In progress · Politics &amp; Governance special issue</span></p></li>
+<li><span class="when">—</span><p class="what"><strong>Serra-Silva</strong>, S. and Rangoni, S. “Public Engagement in a Multilevel Political Setting: The case of Parliamentary Institutions in Belgium” <span class="note">In progress</span></p></li>
+<li><span class="when">—</span><p class="what">Pennetreau, D., Jacquet, V. and <strong>Serra-Silva</strong>, S. “Comparing Discourses about Citizens’ Assemblies in Six National Public Debates: One Design for Multiple Political Conceptions” <span class="note">In progress</span></p></li>
+<li><span class="when">—</span><p class="what">Santos, N., Lourenço, P. and <strong>Serra-Silva</strong>, S. “Who still supports communism? Core, Distant, and Demobilized Supporters of the Portuguese Communist Party (2002–2024)” <span class="note">In progress</span></p></li>
+</ol>
+</div>
+  </section>
+
+  <section class="sec" id="teaching" aria-labelledby="teach-h">
+    <div class="sec-head">
+      <h2 id="teach-h">Teaching</h2>
+      <p>Courses in political science, research methods and international relations, in Portugal and abroad.</p>
+    </div>
+    <div class="group"><h3>University appointments</h3>
+<ol class="rows">
+  <li><span class="when">2023–2025</span><div class="what"><span class="t">Assistant Professor</span>
+    <span class="sub">Institute of Social Sciences, University of Lisbon</span>
+    <ul><li>Workshop of Comparative Politics II, PhD in Comparative Politics (course coordinator, spring 2024 and spring 2025)</li></ul></div></li>
+  <li><span class="when">Spring 2023</span><div class="what"><span class="t">Visiting Professor</span>
+    <span class="sub">Department of Government, Georgetown University, Washington DC</span>
+    <ul><li>Modern Parliaments and the Public, undergraduate course (course coordinator)</li></ul></div></li>
+  <li><span class="when">2020–2023</span><div class="what"><span class="t">Guest Assistant Professor</span>
+    <span class="sub">Department of Sociology, University of Beira Interior (UBI)</span>
+    <ul>
+      <li>BA Political Science and International Relations: Political Analysis; Introduction to International Relations (2020/21)</li>
+      <li>BA Communication Sciences: Methodology of Scientific Work (2020/21, 2021/22)</li>
+      <li>MA Political Science: Research Seminar (2023/24)</li>
+      <li>MA International Relations: Research Seminar (2020/21, 2021/22, 2022/23); Research Methods (2021/22); Laboratory of Methods (2022/23)</li>
+    </ul></div></li>
+  <li><span class="when">2018–2019</span><div class="what"><span class="t">Teaching Assistant</span>
+    <span class="sub">School of Communication and Media Studies (ESCS), Polytechnic Institute of Lisbon</span>
+    <ul><li>Political Sociology, BA Journalism</li></ul></div></li>
+  <li><span class="when">2017–2018</span><div class="what"><span class="t">Teaching Assistant</span>
+    <span class="sub">ISCTE-IUL, Lisbon</span>
+    <ul><li>Laboratory of Research Project in Political Science, BA Political Science</li></ul></div></li>
+</ol>
+</div>
+    <div class="group"><h3>International programmes and workshops</h3>
+<ol class="rows">
+  <li><span class="when">2024</span><div class="what"><span class="t">Animals and Society</span>
+    <span class="sub">Post-graduate course · lecture “Animals and Politics: What We Know”; coordinator of the Politics and Animals module</span></div></li>
+  <li><span class="when">2022</span><div class="what"><span class="t">Animals and Society</span>
+    <span class="sub">Post-graduate course · lecture on animals, politics and parties</span></div></li>
+  <li><span class="when">2022</span><div class="what"><span class="t">EuroSud School on Methods</span>
+    <span class="sub">Erasmus Mundus International Master on South European Studies · lecture on online surveys, taught in English</span></div></li>
+  <li><span class="when">2021</span><div class="what"><span class="t">International teaching mission, University of Mostar</span>
+    <span class="sub">Bosnia and Herzegovina, June 2021, as guest professor of UBI</span></div></li>
+  <li><span class="when">2017</span><div class="what"><span class="t">Introduction to web surveys</span>
+    <span class="sub">10-hour workshop</span></div></li>
+</ol>
+</div>
+  </section>
+
+  <section class="sec" id="contact" aria-labelledby="contact-h">
+    <div class="sec-head"><h2 id="contact-h">Contact</h2></div>
+    <div class="contact">
+      <span class="addr" id="email">Sofia.silva@ics.ulisboa.pt</span>
+      <button class="copy" type="button" id="copy-email">Copy address</button>
+      <span id="copy-status" role="status" class="when"></span>
+    </div>
+  </section>
+</main>
+<footer class="foot"><div class="wrap">Instituto de Ciências Sociais, Universidade de Lisboa · Updated October 2026</div></footer>
+
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip'), groups=document.querySelectorAll('.group[data-kind]');
+  chips.forEach(function(chip){
+    chip.addEventListener('click',function(){
+      var f=chip.getAttribute('data-filter');
+      chips.forEach(function(c){c.setAttribute('aria-pressed',c===chip?'true':'false');});
+      groups.forEach(function(g){g.hidden=!(f==='all'||g.getAttribute('data-kind')===f);});
+    });
+  });
+  var btn=document.getElementById('copy-email'), out=document.getElementById('copy-status'), addr=document.getElementById('email');
+  function selectAddr(){var r=document.createRange();r.selectNodeContents(addr);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
+  btn.addEventListener('click',function(){
+    var done=function(){out.textContent='Copied';};
+    var fail=function(){selectAddr();out.textContent='Selected, press copy';};
+    try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(addr.textContent.trim()).then(done,fail);} else {fail();} }
+    catch(e){fail();}
+  });
+})();
+</script>
+
+</body>
+</html>
